@@ -1,22 +1,28 @@
 import React from 'react'
-import css_profile_module from "./MyPosts.module.css";
+import cssMyPosts from "./MyPosts.module.css";
 import Post from './Post/Post';
+
 const MyPosts = () => {
   return (
-    <div>
-      My posts
+    <div className={cssMyPosts.postsBlock}>
+      <h3>My posts</h3>
       <div>
-        <textarea placeholder="Hello"></textarea>
-        <button>Add</button>
-        <button>Ddlete</button>
+        <div>
+          <textarea placeholder="Hello"> </textarea>
+        </div>
+        <div  className={cssMyPosts.posts}>
+          <button>Add</button>
+          <button>Delete</button>
+        </div>
+      
       </div>
-
-      <div className={css_profile_module.post}>
-     <Post message="Hi Bro" likesCount="0" />
-   
-     <Post message="Alex car" likesCount="32" />
-  
-  
+      
+      <div className={cssMyPosts.post}>
+        <Post message="Hi Bro" likesCount="0"/>
+        
+        <Post message="Alex car" likesCount="32"/>
+      
+      
       </div>
     </div>
   )

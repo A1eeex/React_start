@@ -1,6 +1,11 @@
 import React from 'react';
 import css_mod_dialogs from './Dialogs.module.css'
-import { NavLink } from "react-router-dom"
+import Dialog from "./Dialog/Dialog";
+import Message from "./Mesagge/Message";
+
+
+
+
 
 const Dialogs = (props) => {
   return (
@@ -8,26 +13,26 @@ const Dialogs = (props) => {
       
       <div className={css_mod_dialogs.dialogs}>
         <div className={css_mod_dialogs.dialog}>
-          <NavLink to="/dialogs/1" activeClassName={css_mod_dialogs.activeLinc}>Albert</NavLink>
+          <Dialog id="1" name="Senia"/>
         </div>
         <div className={css_mod_dialogs.dialog}>
-          <NavLink to="/dialogs/2" activeClassName={css_mod_dialogs.activeLinc}>Kris</NavLink>
+          <Dialog id="2" name="Kris"/>
         </div>
         <div className={css_mod_dialogs.dialog}>
-          <NavLink to="/dialogs/3" activeClassName={css_mod_dialogs.activeLinc}>Monica</NavLink>
+          <Dialog id="3" name="Monica"/>
         </div>
         <div className={css_mod_dialogs.dialog}>
-          <NavLink to="/dialogs/4" activeClassName={css_mod_dialogs.activeLinc}>Tom</NavLink>
+          <Dialog id="4" name="Tom"/>
         </div>
         <div className={css_mod_dialogs.dialog}>
-          <NavLink to="/dialogs/5" activeClassName={css_mod_dialogs.activeLinc} >Roma</NavLink>
+          <Dialog id="5" name="Roma"/>
         </div>
       </div>
       
       <div className={css_mod_dialogs.messages}>
-        <div className={css_mod_dialogs.message}>Yo Valodia</div>
-        <div className={css_mod_dialogs.message}>How are you?</div>
-        <div className={css_mod_dialogs.message}>Good luck!</div>
+       <Message message="WoW!" />
+       <Message message="How are you?!" />
+       <Message message="Good luck!!" />
       </div>
     
     </div>
