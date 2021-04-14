@@ -1,6 +1,6 @@
 import React from 'react';
 import css_mod_dialogs from './Dialogs.module.css'
-import Dialog from "./Dialog/Dialog";
+import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Mesagge/Message";
 
 const Dialogs = (props) => {
@@ -19,7 +19,7 @@ const Dialogs = (props) => {
     {id: 4, message: '25!'},
   ]
   
-  let dialogsElement = dialogs.map(newDialog => <Dialog id={newDialog.id} name={newDialog.name}/>)
+  let dialogsElement = dialogs.map(newDialog => <DialogItem id={newDialog.id} name={newDialog.name}/>)
   let messageElement = messages.map(newMessage => <Message message={newMessage.message}/>)
   
   return (

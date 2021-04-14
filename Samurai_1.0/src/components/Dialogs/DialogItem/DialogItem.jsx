@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import css_mod_dialogs from "../Dialogs.module.css";
 
-const Dialog = (props) => {
+const DialogItem = (props) => {
   let path = "/dialogs/" + props.id
   return (
     <div>
@@ -9,4 +9,4 @@ const Dialog = (props) => {
     </div>
   );
 };
-export default Dialog
+export default DialogItem
