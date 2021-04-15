@@ -10,6 +10,7 @@
       <change afterPath="$PROJECT_DIR$/src/components/Dialogs/Mesagge/Message.jsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/state.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
@@ -101,7 +102,7 @@
       <workItem from="1618139436949" duration="612000" />
       <workItem from="1618140724860" duration="4694000" />
       <workItem from="1618165464034" duration="10285000" />
-      <workItem from="1618221064740" duration="31068000" />
+      <workItem from="1618221064740" duration="37074000" />
     </task>
     <servers />
   </component>

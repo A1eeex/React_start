@@ -9,7 +9,6 @@ import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
 
 
-
 const App = (props) => {
   return (
     <BrowserRouter>
@@ -17,8 +16,12 @@ const App = (props) => {
         <Header/>
         <Navbar/>
         <div className='app-wrapper-content'>
-          <Route path="/dialogs" render={() => < Dialogs dialogs={props.dialogs} messages={props.messages} />}/>
-          <Route path="/profile" render={() => < Profile postData={props.postData} />}/>
+          <Route path="/dialogs"
+                 render={() => < Dialogs
+                   state={props.state.dialogsPage} />}/>
+          <Route path="/profile"
+                 render={() => < Profile
+                   state={props.state.profilePage}/>}/>
           <Route path="/news" render={(RoteNews)}/>
           <Route path="/music" render={(RoteMusic)}/>
           <Route path="/settings" render={(RoteSettings)}/>
