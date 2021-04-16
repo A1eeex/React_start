@@ -14,8 +14,10 @@ const App = (props) => {
     <BrowserRouter>
       <div className="app-wrapper">
         <Header/>
-        <Navbar/>
+        <Navbar state ={props.state.siteBar}/>
+        
         <div className='app-wrapper-content'>
+          <b>Hello to my page!</b>
           <Route path="/dialogs"
                  render={() => < Dialogs
                    state={props.state.dialogsPage} />}/>

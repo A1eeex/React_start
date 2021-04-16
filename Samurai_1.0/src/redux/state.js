@@ -15,12 +15,21 @@ let state = {
       {id: 5, name: 'Robert'},
     ],
     messages: [
-      {id: 1, message: 'WOoW'},
-      {id: 2, message: 'Good luck!!'},
-      {id: 3, message: 'Rect go to Top!'},
-      {id: 4, message: '25!'},
+      {id: 1, message: 'How are you?'},
+      {id: 2, message: 'Perfecto!'},
+      {id: 3, message: 'Do you steady React?'},
+      {id: 4, message: 'Yo!!'},
     ]
   },
+  
+  siteBar: {
+    users: [
+      {id: 1, name: 'Dima'},
+      {id: 2, name: 'Olia'},
+      {id: 3, name: 'Masha'},
+ 
+    ]
+  }
 }
 
 export default state

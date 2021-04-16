@@ -1,0 +1,15 @@
+.siteBar {
+    text-decoration: none;
+    color: #fcfcfc;
+    margin-top: 40px;
+    font-size: 35px;
+    font-weight: 300;
+}
+
+.siteBar img {
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+
+}
+  
