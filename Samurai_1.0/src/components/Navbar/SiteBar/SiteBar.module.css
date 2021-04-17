@@ -1,9 +1,9 @@
 .siteBar {
     text-decoration: none;
-    color: #fcfcfc;
-    margin-top: 40px;
-    font-size: 35px;
-    font-weight: 300;
+    color: rgba(212, 211, 211, 0.85);
+    margin-top: 5px;
+    font-size: 25px;
+    font-weight: 500;
 }
 
 .siteBar img {

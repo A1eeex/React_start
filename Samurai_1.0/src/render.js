@@ -1,0 +1,23 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import { addMesagePosts, updateNewPostText } from "./redux/state"
+import { BrowserRouter } from "react-router-dom";
+
+export let rerenderEntireThree = (state)=>{
+  ReactDOM.render(
+    <React.StrictMode>
+      <BrowserRouter>
+        <App
+          state={state}
+          addMesagePosts={addMesagePosts}
+          updateNewPostText={updateNewPostText}
+        />
+      </BrowserRouter>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+}
+
+

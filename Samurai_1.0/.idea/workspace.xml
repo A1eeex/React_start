@@ -15,6 +15,7 @@
       <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.module.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/redux/state.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/render.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
@@ -65,7 +66,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TypeScript JSX" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Navbar/SiteBar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -80,11 +81,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Oleksandr\OneDrive\Documents\GitHub\React_start\Samurai_1.0\src" />
       <recent name="C:\Users\Oleksandr\OneDrive\Documents\GitHub\React_start\Samurai_1.0\src\components\Navbar\SiteBar" />
       <recent name="C:\Users\Oleksandr\OneDrive\Documents\GitHub\React_start\Samurai_1.0\src\components\Dialogs\Mesagge" />
       <recent name="C:\Users\Oleksandr\OneDrive\Documents\GitHub\React_start\Samurai_1.0\src\components\Dialogs\DialogItem" />
       <recent name="C:\Users\Oleksandr\OneDrive\Documents\GitHub\React_start\Samurai_1.0\src\components\Profile\ProfileInfo" />
-      <recent name="C:\Users\Oleksandr\Desktop\Samurai_1.0\01-project\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Oleksandr\OneDrive\Documents\GitHub\React_start\Samurai_1.0\src\components" />
@@ -111,7 +112,8 @@
       <workItem from="1618139436949" duration="612000" />
       <workItem from="1618140724860" duration="4694000" />
       <workItem from="1618165464034" duration="10285000" />
-      <workItem from="1618221064740" duration="56866000" />
+      <workItem from="1618221064740" duration="71600000" />
+      <workItem from="1618611552192" duration="337000" />
     </task>
     <servers />
   </component>
@@ -163,6 +165,23 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/redux/state.js</url>
+          <line>39</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/redux/state.js</url>
+          <line>3</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

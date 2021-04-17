@@ -4,7 +4,7 @@
     background-color: rgba(229, 229, 19, 0.91);
     border-radius: 50%;
 }
-
-.messageWrapper {
-    display: flex;
+.siteBarUsers{
+    display:flex;
+    font-size:12px;
 }

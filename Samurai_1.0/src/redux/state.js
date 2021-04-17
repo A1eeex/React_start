@@ -1,10 +1,14 @@
+import React from "react";
+import { rerenderEntireThree } from "../render";
+
 let state = {
   profilePage: {
     postData: [
       {id: 1, message: 'Hi bro!', likesCount: '3'},
       {id: 2, message: 'Do you study React?', likesCount: '9'},
       {id: 3, message: 'Yes, I do!', likesCount: '100'},
-    ]
+    ],
+    newPostText: "My best page"
   },
   dialogsPage: {
     dialogs: [
@@ -27,9 +31,24 @@ let state = {
       {id: 1, name: 'Dima'},
       {id: 2, name: 'Olia'},
       {id: 3, name: 'Masha'},
- 
+    
     ]
   }
 }
 
+export let addMesagePosts = () => {
+  let newPostMessage = {
+    id: 5,
+    message: state.profilePage.newPostText,
+    likesCount: 0,
+  };
+  state.profilePage.postData.push(newPostMessage)
+  state.profilePage.newPostText = ""
+  rerenderEntireThree(state)
+}
+
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireThree(state)
+}
 export default state

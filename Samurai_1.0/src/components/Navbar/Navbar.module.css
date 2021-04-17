@@ -27,8 +27,11 @@
     font-size:25px;
 }
 
-.siteBar a {
-    text-decoration: none;
-    color: #fcfcfc
+.siteBar  {
+   margin-top: 20px;
 }
-  
+  .siteBarTitle{
+      text-align: center;
+      color: rgba(7, 7, 7, 0.8);
+      font-size:30px;
+  }

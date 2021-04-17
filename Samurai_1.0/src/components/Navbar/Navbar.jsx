@@ -6,7 +6,7 @@ import Post from "../Profile/MyPosts/Post/Post";
 
 const Navbar = (props) => {
 
-  let siteBarElement = props.state.users.map(newUser => < SiteBar users={newUser.users} />)
+  let siteBarElement = props.state.map(newUser => < SiteBar users={newUser.name} />)
 
   return (
     <nav className={classes.nav}>
@@ -28,8 +28,11 @@ const Navbar = (props) => {
       </div>
       
       <div className={classes.siteBar}>
-        <div> Friends</div>
-        {siteBarElement}
+        <div className={classes.siteBarTitle}> Friends</div>
+        <div >
+          {siteBarElement}
+        </div>
+        
         
       </div>
     </nav>
