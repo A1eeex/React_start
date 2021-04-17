@@ -6,7 +6,11 @@ import Message from "./Mesagge/Message";
 const Dialogs = (props) => {
 
   let dialogsElement = props.state.dialogs.map(newDialog => <DialogItem id={newDialog.id} name={newDialog.name}/>)
-  let messageElement = props.state.messages.map(newMessage => <Message message={newMessage.message}/>)
+  let messageElement = props.state.messages.map(newMessage => <Message
+    firstMessage={props.state.firstMessage}
+    addNewDialogMessage={props.addNewDialogMessage}
+    updateNewDialogMessageText={props.updateNewDialogMessageText}
+    message={newMessage.message}/>)
   
   return (
     <div className={css_mod_dialogs.dialogsContainer}>
@@ -17,6 +21,8 @@ const Dialogs = (props) => {
       <div className={css_mod_dialogs.messages}>
         {messageElement}
       </div>
+      
+      
     </div>
   );
 };

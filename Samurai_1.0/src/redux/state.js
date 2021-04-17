@@ -23,7 +23,8 @@ let state = {
       {id: 2, message: 'Perfecto!'},
       {id: 3, message: 'Do you steady React?'},
       {id: 4, message: 'Yo!!'},
-    ]
+    ],
+    firstMessage: "YO Bro!"
   },
   
   siteBar: {
@@ -34,6 +35,24 @@ let state = {
     
     ]
   }
+}
+export let addNewDialogMessage = () => {
+  
+  let newMessage = {
+    id: 5,
+    message: state.dialogsPage.firstMessage
+  };
+  state.dialogsPage.messages.push(newMessage);
+  console.log(
+    'NEW MESsAGE',
+  );
+  
+  rerenderEntireThree(state)
+}
+
+export let updateNewDialogMessageText = (newMessageText) => {
+  state.dialogsPage.firstMessage = newMessageText;
+  rerenderEntireThree(state)
 }
 
 export let addMesagePosts = () => {

@@ -113,7 +113,8 @@
       <workItem from="1618140724860" duration="4694000" />
       <workItem from="1618165464034" duration="10285000" />
       <workItem from="1618221064740" duration="71600000" />
-      <workItem from="1618611552192" duration="337000" />
+      <workItem from="1618611552192" duration="2517000" />
+      <workItem from="1618657139534" duration="10207000" />
     </task>
     <servers />
   </component>
@@ -165,23 +166,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/redux/state.js</url>
-          <line>39</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/redux/state.js</url>
-          <line>3</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
