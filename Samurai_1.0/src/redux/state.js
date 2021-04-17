@@ -1,6 +1,8 @@
 import React from "react";
-import { rerenderEntireThree } from "../render";
 
+let rerenderEntireThree = () => {
+  console.log("state was changed")
+}
 let state = {
   profilePage: {
     postData: [
@@ -36,7 +38,9 @@ let state = {
     ]
   }
 }
-export let addNewDialogMessage = () => {
+window.state = state
+
+export const addNewDialogMessage = () => {
   
   let newMessage = {
     id: 5,
@@ -49,13 +53,12 @@ export let addNewDialogMessage = () => {
   
   rerenderEntireThree(state)
 }
-
-export let updateNewDialogMessageText = (newMessageText) => {
+export const updateNewDialogMessageText = (newMessageText) => {
   state.dialogsPage.firstMessage = newMessageText;
   rerenderEntireThree(state)
 }
 
-export let addMesagePosts = () => {
+export const addMesagePosts = () => {
   let newPostMessage = {
     id: 5,
     message: state.profilePage.newPostText,
@@ -65,9 +68,13 @@ export let addMesagePosts = () => {
   state.profilePage.newPostText = ""
   rerenderEntireThree(state)
 }
-
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
   state.profilePage.newPostText = newText;
   rerenderEntireThree(state)
 }
+
+export const subscribe = (observer) => {
+  rerenderEntireThree = observer
+}
+
 export default state

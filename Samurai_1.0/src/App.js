@@ -7,7 +7,6 @@ import { Route } from "react-router-dom"
 import { RoteDialog, RoteProfile, RoteNews, RoteMusic, RoteSettings } from "./components/AppVirables"
 import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
-import { addNewDialogMessage, updateNewPostText } from "./redux/state";
 
 
 const App = (props) => {
