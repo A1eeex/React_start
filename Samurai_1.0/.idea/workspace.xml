@@ -53,6 +53,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HierarchyBrowserManager">
+    <option name="SCOPE" value="All" />
+  </component>
   <component name="ProjectId" id="1qwQ7cjxpFJ6XuuupLgnybg1REh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -113,7 +116,7 @@
       <workItem from="1618165464034" duration="10285000" />
       <workItem from="1618221064740" duration="71600000" />
       <workItem from="1618611552192" duration="2517000" />
-      <workItem from="1618657139534" duration="12951000" />
+      <workItem from="1618657139534" duration="21348000" />
     </task>
     <servers />
   </component>
