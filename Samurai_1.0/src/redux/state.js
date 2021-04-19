@@ -1,5 +1,8 @@
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
+const ADD_MESSAGE = "ADD-MESSAGE";
+const UPDATE_MESSAGE = "UPDATE-MESSAGE";
+
 let store = {
   _state: {
     profilePage: {
@@ -22,9 +25,9 @@ let store = {
         {id: 1, message: 'How are you?'},
         {id: 2, message: 'Perfecto!'},
         {id: 3, message: 'Do you steady React?'},
-        {id: 4, message: 'Yo!!'},
+      
       ],
-      firstMessage: "YO Bro!"
+      firstMessage: "Yo Bro!"
     },
     
     siteBar: {
@@ -47,19 +50,22 @@ let store = {
     console.log("state was changed")
     
   },
-  dispatchDialogMessage(action) {
-    if (action.type === "ADD-MESSAGE") {
-      let newMessage = {
-        id: 5,
-        message: this._state.dialogsPage.firstMessage
-      };
-      this._state.dialogsPage.messages.push(newMessage);
-      this._callSubscriber(this._state)
-    } else if (action.type === "UPDATE-MESSAGE") {
-      this._state.dialogsPage.firstMessage = action.newMessageText;
-      this._callSubscriber(this._state)
-    }
-  },
+  // dispatchDialogMessage(action) {
+  //
+  //   if (action.type === ADD_MESSAGE) {
+  //     let newMessage = {
+  //       id: 5,
+  //       message: this._state.dialogsPage.firstMessage
+  //     };
+  //     this._state.dialogsPage.messages.push(newMessage);
+  //     this._callSubscriber(this._state)
+  //   } else {
+  //     if (action.type === UPDATE_MESSAGE) {
+  //       this._state.dialogsPage.firstMessage = action.newMessageText;
+  //       this._callSubscriber(this._state)
+  //     }
+  //   }
+  // },
   
   
   dispatch(action) {
@@ -77,22 +83,41 @@ let store = {
     } else if (action.type === UPDATE_NEW_POST_TEXT) {
       this._state.profilePage.newPostText = action.newText;
       this._callSubscriber(this._state)
+    } else if (action.type === ADD_MESSAGE) {
+      let newMessage = {
+        id: 5,
+        message: this._state.dialogsPage.firstMessage
+      };
+      this._state.dialogsPage.messages.push(newMessage);
+      this._callSubscriber(this._state)
+    } else if (action.type === UPDATE_MESSAGE) {
+      this._state.dialogsPage.firstMessage = action.newMessageText;
+      this._callSubscriber(this._state)
     }
   }
 }
 export const addPostActionCreator = () => {
- 
   return {
     type: ADD_POST
   }
 }
 
 export const onPostChangeActionCreator = (text) => {
-  
   return {
     type: UPDATE_NEW_POST_TEXT, newText: text
   }
 }
 
+
+export const addMessageActionCreator = () => {
+  return {
+    type: ADD_MESSAGE
+  }
+}
+export const updateMessageActionCreator = (message) => {
+  return {
+    type: UPDATE_MESSAGE, newMessageText: message
+  }
+}
 export default store
 window.store = store

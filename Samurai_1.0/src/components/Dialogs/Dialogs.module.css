@@ -18,8 +18,8 @@
     color:gold;
 }
 .messages {
-    display:grid;
-    grid-template-columns: repeat(2, 2fr);
+    /*display:grid;*/
+    /*grid-template-columns: repeat(2, 2fr);*/
 
     padding: 12px;
 }

@@ -20,9 +20,10 @@ const App = (props) => {
         
         <Route path="/dialogs"
                render={() => < Dialogs
-                 state={props.state.dialogsPage}
-
-                 dispatchDialogMessage={props.dispatchDialogMessage}
+                 
+                 store={props.store}
+                 dispatch={props.dispatch}
+                 // dispatchDialogMessage={props.dispatchDialogMessage}
              
                  
                />}/>
