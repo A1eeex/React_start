@@ -8,8 +8,9 @@ const Dialogs = (props) => {
   let dialogsElement = props.state.dialogs.map(newDialog => <DialogItem id={newDialog.id} name={newDialog.name}/>)
   let messageElement = props.state.messages.map(newMessage => <Message
     firstMessage={props.state.firstMessage}
-    addNewDialogMessage={props.addNewDialogMessage}
-    updateNewDialogMessageText={props.updateNewDialogMessageText}
+
+    dispatchDialogMessage={props.dispatchDialogMessage}
+
     message={newMessage.message}/>)
   
   return (

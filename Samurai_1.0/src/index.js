@@ -14,11 +14,12 @@ let rerenderEntireThree = (state)=>{
     <React.StrictMode>
       <BrowserRouter>
         <App
-          state={store.getState()}
-          addMesagePosts={store.addMesagePosts.bind(store)}
-          updateNewDialogMessageText={store.updateNewDialogMessageText.bind(store)}
-          addNewDialogMessage={store.addNewDialogMessage.bind(store)}
-          updateNewPostText={store.updateNewPostText.bind(store)}
+          state={state}
+          dispatch={store.dispatch.bind(store)}
+
+          dispatchDialogMessage={store.dispatchDialogMessage.bind(store)}
+          
+       
         />
       </BrowserRouter>
     </React.StrictMode>,

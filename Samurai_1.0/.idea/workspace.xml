@@ -68,6 +68,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TypeScript JSX" />
+    <property name="js.last.introduce.type" value="CONST" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -116,7 +117,9 @@
       <workItem from="1618165464034" duration="10285000" />
       <workItem from="1618221064740" duration="71600000" />
       <workItem from="1618611552192" duration="2517000" />
-      <workItem from="1618657139534" duration="21348000" />
+      <workItem from="1618657139534" duration="22893000" />
+      <workItem from="1618777101490" duration="5510000" />
+      <workItem from="1618823228724" duration="5072000" />
     </task>
     <servers />
   </component>

@@ -1,3 +1,5 @@
+const ADD_POST = "ADD-POST";
+const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
 let store = {
   _state: {
     profilePage: {
@@ -34,55 +36,63 @@ let store = {
       ]
     }
   },
-  getState (){
-   
-  
-    return  this._state
+  getState() {
+    return this._state
   },
+  subscribe(observer) {
+    this._callSubscriber = observer
+  },
+  
   _callSubscriber() {
     console.log("state was changed")
     
   },
-  addNewDialogMessage() {
-    
-    let newMessage = {
-      id: 5,
-      message: this._state.dialogsPage.firstMessage
-    };
-    this._state.dialogsPage.messages.push(newMessage);
-    console.log(
-      'NEW MESsAGE',
-    );
-    
-    this._callSubscriber(this._state)
+  dispatchDialogMessage(action) {
+    if (action.type === "ADD-MESSAGE") {
+      let newMessage = {
+        id: 5,
+        message: this._state.dialogsPage.firstMessage
+      };
+      this._state.dialogsPage.messages.push(newMessage);
+      this._callSubscriber(this._state)
+    } else if (action.type === "UPDATE-MESSAGE") {
+      this._state.dialogsPage.firstMessage = action.newMessageText;
+      this._callSubscriber(this._state)
+    }
   },
-  updateNewDialogMessageText(newMessageText) {
-    this._state.dialogsPage.firstMessage = newMessageText;
-    this._callSubscriber(this._state)
-  },
-  addMesagePosts() {
-    
-    let newPostMessage = {
-      id: 5,
-      message: this._state.profilePage.newPostText,
-      likesCount: 0,
-    };
-    this._state.profilePage.postData.push(newPostMessage)
-    this._state.profilePage.newPostText = ""
-    this._callSubscriber(this._state)
-  },
-  updateNewPostText(newText) {
-    this._state.profilePage.newPostText = newText;
-    this._callSubscriber(this._state)
-  },
-   subscribe  (observer)  {
-    this._callSubscriber = observer
-  }
   
+  
+  dispatch(action) {
+    
+    if (action.type === ADD_POST) {
+      let newPostMessage = {
+        id: 5,
+        message: this._state.profilePage.newPostText,
+        likesCount: 0,
+      };
+      this._state.profilePage.postData.push(newPostMessage)
+      this._state.profilePage.newPostText = ""
+      this._callSubscriber(this._state)
+      
+    } else if (action.type === UPDATE_NEW_POST_TEXT) {
+      this._state.profilePage.newPostText = action.newText;
+      this._callSubscriber(this._state)
+    }
+  }
+}
+export const addPostActionCreator = () => {
+ 
+  return {
+    type: ADD_POST
+  }
 }
 
-
-
+export const onPostChangeActionCreator = (text) => {
+  
+  return {
+    type: UPDATE_NEW_POST_TEXT, newText: text
+  }
+}
 
 export default store
 window.store = store
