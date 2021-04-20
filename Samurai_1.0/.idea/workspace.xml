@@ -14,6 +14,9 @@
       <change afterPath="$PROJECT_DIR$/src/components/Navbar/SiteBar/SiteBar.module.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/dialogsPage-reduser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/profilePage-reduser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/siteBar-reduser.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/redux/state.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -69,7 +72,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TypeScript JSX" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -84,11 +87,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Oleksandr\OneDrive\Documents\GitHub\React_start\Samurai_1.0\src\redux" />
       <recent name="C:\Users\Oleksandr\OneDrive\Documents\GitHub\React_start\Samurai_1.0\src" />
       <recent name="C:\Users\Oleksandr\OneDrive\Documents\GitHub\React_start\Samurai_1.0\src\components\Navbar\SiteBar" />
       <recent name="C:\Users\Oleksandr\OneDrive\Documents\GitHub\React_start\Samurai_1.0\src\components\Dialogs\Mesagge" />
       <recent name="C:\Users\Oleksandr\OneDrive\Documents\GitHub\React_start\Samurai_1.0\src\components\Dialogs\DialogItem" />
-      <recent name="C:\Users\Oleksandr\OneDrive\Documents\GitHub\React_start\Samurai_1.0\src\components\Profile\ProfileInfo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Oleksandr\OneDrive\Documents\GitHub\React_start\Samurai_1.0\src\components" />
@@ -119,7 +122,7 @@
       <workItem from="1618611552192" duration="2517000" />
       <workItem from="1618657139534" duration="22893000" />
       <workItem from="1618777101490" duration="5510000" />
-      <workItem from="1618823228724" duration="12819000" />
+      <workItem from="1618823228724" duration="18918000" />
     </task>
     <servers />
   </component>
