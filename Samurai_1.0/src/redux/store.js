@@ -34,7 +34,6 @@ let store = {
         {id: 1, name: 'Dima'},
         {id: 2, name: 'Olia'},
         {id: 3, name: 'Masha'},
-      
       ]
     }
   },

@@ -10,36 +10,39 @@ import Dialogs from "./components/Dialogs/Dialogs";
 
 
 const App = (props) => {
+  console.log('state', props.store.getState());
   return (
-    
+
     <div className="app-wrapper">
-      <Header/>
-      <Navbar state={props.state.siteBar.users}/>
-      
+      <Header />
+
+      <Navbar siteBar={props.state.siteBar}
+        store={props.store}
+
+      />
+
       <div className='app-wrapper-content'>
-        
+
         <Route path="/dialogs"
-               render={() => < Dialogs
-                 
-                 store={props.store}
-                 dispatch={props.dispatch}
-                 // dispatchDialogMessage={props.dispatchDialogMessage}
-             
-                 
-               />}/>
-        
+          render={() => < Dialogs
+
+            store={props.store}
+            dispatch={props.dispatch}
+          />} />
+
         <Route path="/profile"
-               render={() => < Profile
-                 profilePage={props.state.profilePage}
-                 dispatch={props.dispatch}
-               
-               />}/>
-        <Route path="/news" render={(RoteNews)}/>
-        <Route path="/music" render={(RoteMusic)}/>
-        <Route path="/settings" render={(RoteSettings)}/>
+          render={() => < Profile
+            store={props.store}
+            dispatch={props.dispatch}
+
+          />} />
+        <Route path="/news" render={(RoteNews)} />
+        <Route path="/music" render={(RoteMusic)} />
+        <Route path="/settings" render={(RoteSettings)} />
       </div>
     </div>
   )
 }
+
 
 export default App;

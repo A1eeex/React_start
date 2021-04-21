@@ -1,7 +1,7 @@
 import React from 'react';
 import css_mod_dialogs from '../Dialogs.module.css'
 import css_mod_message from "./Message.module.css";
-import { addMessageActionCreator, updateMessageActionCreator } from "../../../redux/state";
+import { addMessageActionCreator, updateMessageActionCreator } from "../../../redux/store";
 
 
 const Message = (props) => {

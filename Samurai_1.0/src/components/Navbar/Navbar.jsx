@@ -6,7 +6,8 @@ import Post from "../Profile/MyPosts/Post/Post";
 
 const Navbar = (props) => {
 
-  let siteBarElement = props.state.map(newUser => < SiteBar users={newUser.name} />)
+let state = props.store.getState().siteBarReducer
+  let siteBarElement = state?.users?.map(newUser => < SiteBar users={newUser.name} />)
 
   return (
     <nav className={classes.nav}>
