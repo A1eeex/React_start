@@ -7,10 +7,10 @@ import { Route } from "react-router-dom"
 import { RoteDialog, RoteProfile, RoteNews, RoteMusic, RoteSettings } from "./components/AppVirables"
 import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 
 const App = (props) => {
-  console.log('state', props.store.getState());
   return (
 
     <div className="app-wrapper">
@@ -24,16 +24,17 @@ const App = (props) => {
       <div className='app-wrapper-content'>
 
         <Route path="/dialogs"
-          render={() => < Dialogs
+          render={() => < DialogsContainer
 
             store={props.store}
+            state={props.state}
             dispatch={props.dispatch}
           />} />
 
         <Route path="/profile"
           render={() => < Profile
             store={props.store}
-            dispatch={props.dispatch}
+            // dispatch={props.dispatch}
 
           />} />
         <Route path="/news" render={(RoteNews)} />
