@@ -2,11 +2,10 @@ import React from 'react';
 import classes from "./Navbar.module.css"
 import { NavLink } from "react-router-dom"
 import SiteBar from "./SiteBar/SiteBar";
-import Post from "../Profile/MyPosts/Post/Post";
 
 const Navbar = (props) => {
 
-let state = props.store.getState().siteBarReducer
+let state = props.siteBarReducer
   let siteBarElement = state?.users?.map(newUser => < SiteBar users={newUser.name} />)
 
   return (

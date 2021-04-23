@@ -10,9 +10,7 @@ const Dialogs = (props) => {
   let state = props.dialogsPageReducer
   let dialogsElement = state.dialogs.map(newDialog => <DialogItem id={newDialog.id} name={newDialog.name}/>)
   let messageElement = state.messages.map(newMessage => <Message
-    // firstMessage={props.state.firstMessage}
     dispatch={props.dispatch}
-    // dispatchDialogMessage={props.dispatchDialogMessage}
     message={newMessage.message}/>)
   
   let firstMessage = state.firstMessage
