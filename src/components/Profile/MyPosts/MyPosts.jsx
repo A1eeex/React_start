@@ -9,7 +9,7 @@ import { addPostActionCreator, onPostChangeActionCreator } from "../../../redux/
 const MyPosts = (props) => {
   
   const postElement =
-    props.post.map(newPost => <Post message={newPost.message} likesCount={newPost.likesCount}/>)
+    props.post.map(newPost => <Post message={newPost.message} key={newPost.id} likesCount={newPost.likesCount}/>)
   
   let newPostElement = React.createRef()
   const clearInp = () => newPostElement.current.value = ""
@@ -29,7 +29,6 @@ const MyPosts = (props) => {
         <div>
           <textarea onChange={onPostChange}
                     ref={newPostElement}
-
                     value={props.newPostText}/>
         </div>
         <div className={cssMyPosts.posts}>

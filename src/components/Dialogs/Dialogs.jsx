@@ -8,9 +8,13 @@ import { addMessageActionCreator, updateMessageActionCreator } from "../../redux
 
 const Dialogs = (props) => {
   let state = props.dialogsPageReducer
-  let dialogsElement = state.dialogs.map(newDialog => <DialogItem id={newDialog.id} name={newDialog.name}/>)
+  let dialogsElement = state.dialogs.map(newDialog => <DialogItem
+    id={newDialog.id}
+    key={newDialog.id}
+    name={newDialog.name}/>)
   let messageElement = state.messages.map(newMessage => <Message
     dispatch={props.dispatch}
+    key={newMessage.id}
     message={newMessage.message}/>)
   
   let firstMessage = state.firstMessage

@@ -18,30 +18,36 @@ let initialState = {
   firstMessage: "Yo Bro!"
 };
 
-
 const dialogsPageReducer = (state= initialState, action) => {
+  
+  
   switch (action.type) {
     case ADD_MESSAGE:
       let newMessage = {
         id: 5,
         message: state.firstMessage
       };
-      state.messages.push(newMessage);
-      break;
+      return  {
+        ...state,
+        messages: [...state.messages, newMessage],
+        firstMessage:""
+      }
+      // stateCopy.messages.push(newMessage);
+      
     case UPDATE_MESSAGE:
-      state.firstMessage = action.newMessageText;
-      break;
+      return{
+        ...state,
+        firstMessage: action.newMessageText,
+      }
     default: return state;
   }
-  return state
 }
+
 export const addMessageActionCreator = () => ({type: ADD_MESSAGE})
-
-  
-
 export const updateMessageActionCreator = (message) => {
   return {
     type: UPDATE_MESSAGE, newMessageText: message
   }
 }
+
 export default dialogsPageReducer;

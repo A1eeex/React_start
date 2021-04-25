@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
   return {
-    siteBarReducer: state.siteBarReducer
+    sidebar: state.sidebar
   }
 }
 const mapDispatchToProps = (dispatch) => {
