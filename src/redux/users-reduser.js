@@ -65,7 +65,6 @@ const usersReducer = (state = initialState, action) => {
     case SET_USERS: {
       return {...state, users: action.users}
     }
-    
     case SET_CURRENT_PAGE: {
       return {...state, currentPage: action.currentPage }
     }
@@ -81,11 +80,11 @@ const usersReducer = (state = initialState, action) => {
   }
 }
 
-export const followAC = (userId) => ({type: FOLLOW, userId})
-export const unfollowAC = (userId) => ({type: UNFOLLOW, userId})
-export const setUsersAC = (users) => ({type: SET_USERS, users})
-export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage:currentPage})
-export const setUsersTotalCountAC = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, count:totalUsersCount})
-export const toogleIsFetchingAC = (isFetching) => ({type: TOOGEL_IS_FETCHING, isFetching})
+export const follow = (userId) => ({type: FOLLOW, userId})
+export const unfollow = (userId) => ({type: UNFOLLOW, userId})
+export const setUsers = (users) => ({type: SET_USERS, users})
+export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage:currentPage})
+export const setUsersTotalCount = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, count:totalUsersCount})
+export const toogleIsFetching = (isFetching) => ({type: TOOGEL_IS_FETCHING, isFetching})
 
 export default usersReducer;

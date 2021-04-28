@@ -1,17 +1,16 @@
 import React from 'react';
 import { connect } from "react-redux";
 import {
-  followAC,
-  setCurrentPageAC,
-  setUsersAC,
-  setUsersTotalCountAC, toogleIsFetchingAC,
-  unfollowAC
+  follow,
+  setCurrentPage,
+  setUsers,
+  setUsersTotalCount,
+  toogleIsFetching,
+  unfollow
 } from "../../redux/users-reduser";
 import * as axios from "axios";
 import Users from "./Users";
-import preloader from './../../assets/img/preloader.svg'
 import Preloader from "../common/Preloader/Preloader";
-
 
 class UsersContainer extends React.Component {
   
@@ -21,15 +20,14 @@ class UsersContainer extends React.Component {
       .then(response => {
         this.props.toogleIsFetching(false)
         this.props.setUsers(response.data.items);
-        this.props.setTotalUsersCount(response.data.totalCount);
+        this.props.setUsersTotalCount(response.data.totalCount);
       })
   }
   
   onPageChanged = (pageNumber) => {
-    
     this.props.setCurrentPage(pageNumber)
     this.props.toogleIsFetching(true)
-  
+    
     axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
       .then(response => {
         this.props.toogleIsFetching(false)
@@ -38,10 +36,9 @@ class UsersContainer extends React.Component {
   }
   
   render() {
-    
     return (
       <>
-        {this.props.isFetching ?<Preloader /> : null}
+        {this.props.isFetching ? <Preloader/> : null}
         <Users
           totalUsersCount={this.props.totalUsersCount}
           pageSize={this.props.pageSize}
@@ -55,46 +52,45 @@ class UsersContainer extends React.Component {
       </>
     );
   }
-  
 }
 
 const mapStateToProps = (state) => {
   return {
-    users: state.usersPage.users
-    ,
-    pageSize: state.usersPage.pageSize
-    ,
-    totalUsersCount: state.usersPage.totalUsersCount
-    ,
-    currentPage: state.usersPage.currentPage
-    ,
-    isFetching: state.usersPage.isFetching
-    ,
-    
+    users: state.usersPage.users,
+    pageSize: state.usersPage.pageSize,
+    totalUsersCount: state.usersPage.totalUsersCount,
+    currentPage: state.usersPage.currentPage,
+    isFetching: state.usersPage.isFetching,
   }
 }
 
-let mapDispatchToProps = (dispatch) => {
-  return {
-    follow: (userId) => {
-      dispatch(followAC(userId));
-    },
-    unfollow: (userId) => {
-      dispatch(unfollowAC(userId));
-    },
-    setUsers: (users) => {
-      dispatch(setUsersAC(users));
-    },
-    setCurrentPage: (pageNumber) => {
-      dispatch(setCurrentPageAC(pageNumber));
-    },
-    setTotalUsersCount: (totalCount) => {
-      dispatch(setUsersTotalCountAC(totalCount));
-    }, toogleIsFetching: (isFetching) => {
-      dispatch(toogleIsFetchingAC(isFetching));
-    },
-  }
-}
+// let mapDispatchToProps = (dispatch) => {
+//   return {
+//     follow: (userId) => {
+//       dispatch(followAC(userId));
+//     },
+//     unfollow: (userId) => {
+//       dispatch(unfollowAC(userId));
+//     },
+//     setUsers: (users) => {
+//       dispatch(setUsersAC(users));
+//     },
+//     setCurrentPage: (pageNumber) => {
+//       dispatch(setCurrentPageAC(pageNumber));
+//     },
+//     setTotalUsersCount: (totalCount) => {
+//       dispatch(setUsersTotalCountAC(totalCount));
+//     }, toogleIsFetching: (isFetching) => {
+//       dispatch(toogleIsFetchingAC(isFetching));
+//     },
+//   }
+// }
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
+export default connect(mapStateToProps, {
+  follow,
+  unfollow,
+  setUsers,
+  setCurrentPage,
+  setUsersTotalCount,
+  toogleIsFetching
+})(UsersContainer)
