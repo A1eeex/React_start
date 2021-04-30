@@ -6,11 +6,12 @@ import usersReducer from "./users-reduser";
 const {createStore} = require("redux");
 
 let reducers = combineReducers({
-  profilePageReducer: profilePageReducer,
+  profilePage: profilePageReducer,
   dialogsPageReducer: dialogsPageReducer,
   sidebar: siteBarReducer,
   usersPage: usersReducer
 });
 let store = createStore(reducers)
+window.store= store
 
 export default store

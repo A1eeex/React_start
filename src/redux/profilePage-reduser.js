@@ -1,5 +1,7 @@
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
+const SET_USERS_PROFILE = "SET_USERS_PROFILE";
+const SET_USERS_FULL_NAME = "SET_USERS_FULL_NAME";
 
 let initialState = {
   postData: [
@@ -7,42 +9,49 @@ let initialState = {
     {id: 2, message: 'Do you study React?', likesCount: '9'},
     {id: 3, message: 'Yes, I do!', likesCount: '100'},
   ],
-  newPostText: "My best page"
+  newPostText: "My best page",
+  profile: null,
+  fullName: null,
 };
 
 const profilePageReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_POST:{
+    case ADD_POST: {
       let newPostMessage = {
         id: 5,
         message: state.newPostText,
         likesCount: 0,
       };
-      return{
+      return {
         ...state,
         postData: [...state.postData, newPostMessage],
         newPostText: ""
-        
       };
-      // break;
+      
     }
-    case UPDATE_NEW_POST_TEXT:{
+    case UPDATE_NEW_POST_TEXT: {
       return {
         ...state,
-        newPostText:action.newText
+        newPostText: action.newText
       };
-      // break;
+    }
+    
+    case SET_USERS_PROFILE: {
+      return {...state, profile: action.profile}
+    }
+    case SET_USERS_FULL_NAME: {
+      return {...state, fullName: action.fullName}
     }
     default:
       return state;
   }
 }
 
-export const addPostActionCreator = () => {
-  return {
-    type: ADD_POST
-  }
-}
+export const addPostActionCreator = () => ({type: ADD_POST})
+
+export const setUsersProfile = (profile) => ({type: SET_USERS_PROFILE, profile})
+export const setUsersFullName = (fullName) => ({type: SET_USERS_FULL_NAME, fullName})
+
 export const onPostChangeActionCreator = (text) => {
   return {
     type: UPDATE_NEW_POST_TEXT, newText: text

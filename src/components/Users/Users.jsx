@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "./Users.module.css";
 import userPhoto from "../../assets/img/user2_.png";
+import { NavLink } from "react-router-dom";
 
 
 const Users = (props) => {
@@ -10,22 +11,24 @@ const Users = (props) => {
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i)
   }
-  return     <div>
-      <div>
-        {pages.map(p => {
-          return <span className={props.currentPage === p && styles.selectedPage}
-                       onClick={(e) => {
-                        props.onPageChanged(p)
-                       }}> {p} </span>
-        })}
-      
-      </div>
-      {
-        props.users.map(u => <div key={u.id}>
+  return <div>
+    <div>
+      {pages.map(p => {
+        return <span className={props.currentPage === p && styles.selectedPage}
+                     onClick={(e) => {
+                       props.onPageChanged(p)
+                     }}> {p} </span>
+      })}
+    
+    </div>
+    {
+      props.users.map(u => <div key={u.id}>
           <span>
           <div>
-            <img className={styles.userAvatar} src={u.photos.samall != null ? u.photos.samall : userPhoto}
+            <NavLink to={'/profile/' + u.id}>
+            <img className={styles.userAvatar} src={u.photos.small != null ? u.photos.small : userPhoto}
                  alt="avatar_photo"/>
+              </NavLink>
           </div>
           <div>
             {
@@ -39,8 +42,8 @@ const Users = (props) => {
             }
           </div>
         </span>
-          
-          <span>
+        
+        <span>
             
             <span>
               <div>{u.name}</div>
@@ -48,13 +51,13 @@ const Users = (props) => {
             </span>
             
             <span>
-              <div>{/*{u.location.country}*/}</div>
-               <div>{/*{u.location.city}*/}</div>
+              <div>{'u.location.country'}</div>
+               <div>{'{u.location.city'}</div>
             </span>
           </span>
-        </div>)
-      }
-    </div>
+      </div>)
+    }
+  </div>
   
 };
 
