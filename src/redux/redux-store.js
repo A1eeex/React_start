@@ -1,11 +1,11 @@
-import { combineReducers } from "redux";
+import { combineReducers , createStore } from "redux";
 import profilePageReducer from "./profilePage-reduser";
 import dialogsPageReducer from "./dialogsPage-reduser";
 import siteBarReducer from "./siteBar-reduser";
 import usersReducer from "./users-reduser";
 import authReducer from "./auth-reducer";
 
-const {createStore} = require("redux");
+
 
 let reducers = combineReducers({
   profilePage: profilePageReducer,
