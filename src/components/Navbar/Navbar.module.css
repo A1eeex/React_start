@@ -1,7 +1,7 @@
 .nav {
     padding: 15px;
     grid-area: n;
-    background-color: rgba(53, 37, 3, 0.73);
+    background-color: rgba(53, 37, 3, 0.72);
     font-size: 20px;
     font-weight: bold;
 }
