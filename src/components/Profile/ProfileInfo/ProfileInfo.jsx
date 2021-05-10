@@ -6,7 +6,7 @@ import ProfileStatus from "./ProfileStatus";
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
-  return <Preloader />
+    return <Preloader/>
   }
   return (
     <div>
@@ -17,10 +17,13 @@ const ProfileInfo = (props) => {
       {/*</div>*/}
       
       <div className={cssProfileInfo.descriptionBlock}>
-        <img src={props.profile.photos.small}  alt="user_avatar"/>
+        <img src={props.profile.photos.small} alt="user_avatar"/>
         <div> {props.profile.fullName} </div>
-        <ProfileStatus status={'One life - one rules '}/>
-       
+        <ProfileStatus
+          status={props.status}
+          updateStatus={props.updateStatus}
+        />
+      
       </div>
     </div>
   )

@@ -8,6 +8,8 @@ const Profile = (props) => {
     <div>
       <ProfileInfo profile={props.profile}
                    fullName={props.fullName}
+                   status = {props.status}
+                   updateStatus={props.updateStatus}
       />
       
       <MyPostsContainer  />{/*store={props.store}*/}
