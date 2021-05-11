@@ -1,10 +1,27 @@
 import React from 'react';
-import CSS from "./Login.module.css"
+import style from "./Login.module.css"
+import LoginForm from "./LoginForm/LoginForm";
+import { reduxForm } from "redux-form";
+
+
+const LoginReduxForm= reduxForm({
+  
+  form: 'login'
+})(LoginForm)
+
+
 const Login = (props) => {
+  const onSubmit = (formData)=> {
+  console.log(formData)
+  }
   return (
-    <h1 className={CSS.loginTitle}>
-      Please login your account or register new.
-    </h1>
+    <div>
+      <h1 className={style.loginTitle}>
+        Please login your account or register new.
+      </h1>
+      
+      <LoginReduxForm onSubmit={onSubmit}/>
+    </div>
   );
 };
 
