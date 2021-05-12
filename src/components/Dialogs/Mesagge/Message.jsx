@@ -11,8 +11,6 @@ const Message = (props) => {
     <div className={css_mod_message.messageWrapper}>
       <div className={css_mod_message.messageMark}></div>
       <div className={css_mod_dialogs.message}>{props.message}</div>
-     
-    
     </div>
   );
 };

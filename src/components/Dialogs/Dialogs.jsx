@@ -1,8 +1,8 @@
 import React from 'react';
-import css_mod_dialogs from './Dialogs.module.css'
+import style from './Dialogs.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Mesagge/Message";
-import {Redirect} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 
 const Dialogs = (props) => {
@@ -23,28 +23,27 @@ const Dialogs = (props) => {
   }
   
   let changeMessage = (e) => {
-  let message = e.target.value
+    let message = e.target.value
     props.updateNewMessage(message)
   }
   
-if (!props.isAuth) return  <Redirect to={'/login'} />
+  if (!props.isAuth) return <Redirect to={'/login'}/>
   
-
   
   return (
-    <div className={css_mod_dialogs.dialogsContainer}>
-      <div className={css_mod_dialogs.dialogs}>
+    <div className={style.dialogsContainer}>
+      <div className={style.dialogs}>
         {dialogsElement}
       </div>
-      
-      <div className={css_mod_dialogs.messages}>
-        <div>{messageElement}</div>
-        
-        <div><input onChange={changeMessage}
-                    type="text"
-                    value={firstMessage}
-                    placeholder="message"/><
-                    /div>
+      <div className={style.messageElement}>{messageElement}</div>
+      <div className={style.messages}>
+        <div>
+          <input onChange={changeMessage}
+                 type="text"
+                 value={firstMessage}
+                 placeholder="message"
+          />
+        </div>
         <div>
           <button onClick={addMessageClick}> Add message</button>
         </div>

@@ -31,3 +31,7 @@
 .dialogsPhoto img{
     width:50px
 }
+.messageElement {
+    margin: 20px;
+    text-align: center;
+}
