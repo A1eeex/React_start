@@ -1,7 +1,6 @@
-import { profileAPI, usersAPI } from "../api/api";
+import { profileAPI } from "../api/api";
 
 const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
 const SET_USERS_PROFILE = "SET_USERS_PROFILE";
 const SET_USERS_FULL_NAME = "SET_USERS_FULL_NAME";
 const SET_STATUS = "SET_STATUS";
@@ -12,7 +11,6 @@ let initialState = {
     {id: 2, message: 'Do you study React?', likesCount: '9'},
     {id: 3, message: 'Yes, I do!', likesCount: '100'},
   ],
-  newPostText: "My best page",
   profile: null,
   fullName: null,
   status: "empty status"
@@ -23,22 +21,16 @@ const profilePageReducer = (state = initialState, action) => {
     case ADD_POST: {
       let newPostMessage = {
         id: 5,
-        message: state.newPostText,
+        message: action.createNewPostMessage,
         likesCount: 0,
       };
       return {
         ...state,
         postData: [...state.postData, newPostMessage],
-        newPostText: ""
       };
       
     }
-    case UPDATE_NEW_POST_TEXT: {
-      return {
-        ...state,
-        newPostText: action.newText
-      };
-    }
+  
     
     case SET_USERS_PROFILE: {
       return {...state, profile: action.profile}
@@ -55,7 +47,7 @@ const profilePageReducer = (state = initialState, action) => {
   }
 }
 
-export const addPostActionCreator = () => ({type: ADD_POST})
+export const addPostActionCreator = (createNewPostMessage) => ({type: ADD_POST,createNewPostMessage})
 export const setUsersProfile = (profile) => ({type: SET_USERS_PROFILE, profile})
 export const getUsersProfile = (userId) => (dispatch) =>{
   profileAPI.getProfile(userId)
@@ -64,11 +56,7 @@ export const getUsersProfile = (userId) => (dispatch) =>{
     });
 }
 export const setUsersFullName = (fullName) => ({type: SET_USERS_FULL_NAME, fullName})
-export const onPostChangeActionCreator = (text) => {
-  return {
-    type: UPDATE_NEW_POST_TEXT, newText: text
-  }
-}
+
 export const setStatus = (status) => ({type: SET_STATUS, status})
 export const getStatus = (userId) => (dispatch) =>{
   profileAPI.getStatus(userId)

@@ -6,7 +6,6 @@
 .dialogs {
     padding: 12px;
     font-weight:500;
-
 }
 
 .dialogs a{
@@ -18,14 +17,7 @@
     color:gold;
 }
 .messages {
-    /*display:grid;*/
-    /*grid-template-columns: repeat(2, 2fr);*/
-
     padding: 12px;
-}
-
-.message {
-
 }
 
 .dialogsPhoto img{
