@@ -18,3 +18,8 @@
     text-decoration: none;
 
 }
+.logOut {
+    background: #ff4600ed;
+    border-radius: 3px;
+    color: #ffffffe3;
+}
