@@ -1,11 +1,13 @@
 .dialogsContainer {
     display: grid;
-    grid-template-columns:3fr 9fr;
+    grid-template-columns:3fr 6fr;
 }
 
 .dialogs {
     padding: 12px;
     font-weight:500;
+
+
 }
 
 .dialogs a{
