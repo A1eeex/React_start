@@ -36,7 +36,7 @@ let initialState = {
     //   location: {city: 'Krakow', county: 'Poland'}
     // }
   ],
-  pageSize: 5,
+  pageSize: 10,
   totalUsersCount: 0,
   currentPage: 1,
   isFetching: true,

@@ -2,3 +2,15 @@
     padding:10px;
 
 }
+.descriptionBlock img{
+    width: 250px;
+    border-radius: 15px;
+}
+.nickname{
+
+    font-size: 25px;
+    font-weight:700;
+    font-style: italic;
+    color: rgba(34, 27, 1, 0.95);
+
+}
