@@ -1,15 +1,16 @@
 .app-wrapper {
-  width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-areas: "h h" "n c";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
-   /*grid-gap: 10px; */
+    width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: "h h" "n c";
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    /*grid-gap: 10px; */
 }
 
-.app-wrapper-content{
-  grid-area: c;
-  background-color: rgba(24, 72, 172, 0.82)
+.app-wrapper-content {
+    grid-area: c;
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
 }
 
