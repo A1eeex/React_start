@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css';
 import { BrowserRouter, Route, withRouter } from "react-router-dom"
 import { RoteNews, RoteMusic, RoteSettings } from "./components/AppVirables"
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
+// import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import NavbarContainer from "./components/Navbar/NavbarContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
@@ -13,6 +13,9 @@ import { compose } from "redux";
 import { initializeApp } from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 import store from "./redux/redux-store";
+import PreloaderSmall from "./components/common/Preloader/PreloaderSmall";
+import { withSuspense } from "./components/Hoc/withSuspense";
+const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'))
 
 class App extends React.Component {
   componentDidMount() {
@@ -28,7 +31,8 @@ class App extends React.Component {
         <NavbarContainer/>
         <div className='app-wrapper-content'>
           <Route path="/dialogs"
-                 render={() => < DialogsContainer/>}/>
+                 render={withSuspense(DialogsContainer)}
+          />
           <Route path='/profile/:userId?'
                  render={() => < ProfileContainer/>}/>
           
@@ -52,7 +56,7 @@ const AppContainer = compose(
   connect(mapStateToProps, {initializeApp}))(App);
 
 const SamuraiJsApp = (props) => {
-  return <BrowserRouter>
+  return <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Provider store={store}>
       <AppContainer/>
     </Provider>
