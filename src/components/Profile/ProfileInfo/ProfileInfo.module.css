@@ -11,6 +11,13 @@
     font-size: 25px;
     font-weight:700;
     font-style: italic;
-    color: rgba(34, 27, 1, 0.95);
-
+    color: rgba(43, 222, 3, 0.95);
+}
+.contentTitle{
+    font-style: italic;
+    font-weight:500;
+}
+.contact{
+    padding-left:10px;
+    color: #644301;
 }
