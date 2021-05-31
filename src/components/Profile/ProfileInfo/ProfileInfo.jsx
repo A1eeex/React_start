@@ -17,9 +17,12 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
       savePhoto(e.target.files[0])
     }
   }
-  const onSubmit = (formData) => {
-    saveProfile(formData)
-    setEditMode(false)
+  const onSubmit =  (formData) => {
+     saveProfile(formData)
+       .then(() => {
+         setEditMode(false)
+  
+       }       )
   }
   
   return (
@@ -30,7 +33,9 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
         
         {editMode
           ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit}/>
-          : <ProfileData goToEditMode={()=> {setEditMode(true)}} profile={profile} isOwner={isOwner}/>}
+          : <ProfileData goToEditMode={() => {
+            setEditMode(true)
+          }} profile={profile} isOwner={isOwner}/>}
         <ProfileStatusWithHooks
           status={status}
           updateStatus={updateStatus}
@@ -40,10 +45,12 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
   )
 }
 
-const ProfileData= ({profile,isOwner,goToEditMode}) =>{
+const ProfileData = ({profile, isOwner, goToEditMode}) => {
   return (
     <div>
-      {isOwner && <div><button onClick={goToEditMode}>_edit_</button></div>}
+      {isOwner && <div>
+        <button onClick={goToEditMode}>_edit_</button>
+      </div>}
       <div className={styles.nickname}> {profile.fullName} </div>
       <div>
         <b>Locking for a job</b>: {profile.lookingForAJob ? 'Yes' : 'No'}
@@ -56,10 +63,10 @@ const ProfileData= ({profile,isOwner,goToEditMode}) =>{
       <div>
         <b>About me</b>: {profile.aboutMe}
       </div>
-    
+      
       <div>
         <b className={styles.contentTitle}>Contacts</b>: {Object.keys(profile.contacts).map(key => {
-        return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]} />
+        return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
       })}
       </div>
     </div>
