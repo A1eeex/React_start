@@ -70,11 +70,16 @@ export const getStatus = (userId) => async (dispatch) =>{
       dispatch(setStatus(response.data));
 }
 export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos})
+
 export const updateStatus = (status) => async (dispatch) =>{
+  try {
   let response= await profileAPI.updateStatus(status)
       if(response.data.resultCode === 0){
       dispatch(setStatus(status));
     }
+  } catch (error) {
+  
+  }
 }
 export const savePhoto = (file) => async (dispatch) =>{
   let response= await profileAPI.savePhoto(file)
