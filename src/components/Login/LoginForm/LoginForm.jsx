@@ -7,7 +7,7 @@ import { maxLengthCreator, required } from "../../../utils/validators/validators
 
 const MAX_LENGTH_10 = maxLengthCreator(10)
 
-const LoginForm = ({handleSubmit,error}) => {
+const LoginForm = ({handleSubmit,error, captchaUrl}) => {
   return (
     <form className={style.logoForm} onSubmit={handleSubmit}>
       <div>
@@ -15,7 +15,8 @@ const LoginForm = ({handleSubmit,error}) => {
         {createFiled("Password","password",Input,[required],"password")}
         {createFiled(null,"rememberMe",Input,[],"checkbox", {} ,"remember me" )}
       </div>
-      
+      {captchaUrl && <img src={captchaUrl} />}
+      {captchaUrl &&  createFiled("captcha","captcha",Input,[required])}
       {error && <div className={stylesForm.formSummaryError}>
         {error}
       </div>
